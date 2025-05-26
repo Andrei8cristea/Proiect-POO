@@ -241,9 +241,6 @@ bool CRallyCar::isTurbocharged() const {
 //###########################################################################
 
 class CStrategy {
-
-
-
 public:
 
     enum class Mode {Normal, Aggressive, Passive };
@@ -936,7 +933,6 @@ void CMenu::run() {
 
 
 int main() {
-
 
     try {
         CMenu::Instance().run();
