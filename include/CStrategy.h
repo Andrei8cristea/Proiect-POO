@@ -26,14 +26,14 @@ public:
 
     double adjustOther(double baseBid) const;
 
-    // Mode getMode() const;
+    Mode getMode() const;
 
 private:
 
     double favCoef;
     double othersCoef;
 
-    //Mode current;
+    Mode current;
 
 };
 

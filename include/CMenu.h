@@ -17,7 +17,6 @@ class CMenu {
 
 private:
     CRepository<std::shared_ptr<CCar>>  carRepo;
-    // CRepository<CAuction>               auctionRepo;
     CRepository<CBidder>               bidders;
     CBidder userBidder;
     bool userInitialized = false;

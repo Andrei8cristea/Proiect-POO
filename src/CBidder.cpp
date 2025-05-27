@@ -6,7 +6,7 @@
 #include "CInvalidBudget.h"
 #include <random>
 
-CBidder::CBidder(const std::string &n,const double b, const std::string &f, CStrategy s)
+CBidder::CBidder(const std::string &n,const double b, const std::string &f,const CStrategy& s)
     :name(n), budget(b), favourite(f), strategy(s), id(nextId++){}
 
 CBidder::CBidder(): name("Default"), budget(0), favourite("Not_known"), id(nextId++)  {}
@@ -67,11 +67,11 @@ double CBidder::decideBid(const CCar &car, double const currentPrice) const {
     double const stressFactor = dist(gen);
 
     //for debug:
-    // std::cout << "  [" << name << " Strategy: "
-    //           << (strat.getMode() == CStrategy::Mode::Aggressive ? "Aggressive" :
-    //               strat.getMode() == CStrategy::Mode::Normal     ? "Normal"     :
-    //                                                                "Passive")
-    //           << "]\n";
+    std::cout << "  [" << name << " Strategy: "
+              << (strat.getMode() == CStrategy::Mode::Aggressive ? "Aggressive" :
+                  strat.getMode() == CStrategy::Mode::Normal     ? "Normal"     :
+                                                                   "Passive")
+              << "]\n";
 
     double const base = currentPrice + 500;
     double const offer = isFav ? strat.adjustFavourite(base) : strat.adjustOther(base);

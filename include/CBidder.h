@@ -26,7 +26,7 @@ class CBidder {
     int roundsWithoutWin = 0;
 
 public:
-    CBidder(const std::string& n, double b, const std::string& f, CStrategy s);
+    CBidder(const std::string& n, double b, const std::string& f,const CStrategy& s);
 
     CBidder();
 
