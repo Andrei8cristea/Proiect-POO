@@ -21,6 +21,6 @@ double CStrategy::adjustOther(double const baseBid) const {
     return baseBid * othersCoef;
 }
 
-CStrategy::Mode CStrategy::getMode() const {
-    return current;
-}
+// CStrategy::Mode CStrategy::getMode() const {
+//     return current;
+// }

@@ -295,7 +295,7 @@ void CMenu::case4() {
         return;
     }
 
-    CBidder& b = matches.front();
+    const CBidder& b = matches.front();
 
     std::cout << "\nProfile for : " << b.getName() << std::endl;
     std::cout << "Remaining budget: " << b.getBudget() <<std::endl;

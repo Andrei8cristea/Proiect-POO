@@ -26,7 +26,7 @@ public:
 
     double adjustOther(double baseBid) const;
 
-    Mode getMode() const;
+    // Mode getMode() const;
 
 private:
 

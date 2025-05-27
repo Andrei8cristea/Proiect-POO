@@ -20,12 +20,6 @@ public:
         );
     }
 
-    void displayAll() {
-        for (const auto& e : data) {
-            std::cout << e << "\n";
-        }
-    }
-
     std::vector<T>& getAll() {
         return data;
     }
@@ -39,6 +33,12 @@ public:
         }
         return result;
     }
+
+    // void displayAll() {
+    //     for (const auto& e : data) {
+    //         std::cout << e << "\n";
+    //     }
+    // }
 };
 
 #endif // CREPOSITORY_H

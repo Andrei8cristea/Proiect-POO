@@ -105,7 +105,7 @@ void CBidder::addAcquired(const std::shared_ptr<CCar> &car) {
     acquired.push_back(car);
 }
 
-const std::list<std::shared_ptr<CCar> > CBidder::getAcquired() const {
+const std::list<std::shared_ptr<CCar> >& CBidder::getAcquired() const {
     return acquired;
 }
 
