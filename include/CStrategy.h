@@ -33,7 +33,7 @@ private:
     double favCoef;
     double othersCoef;
 
-    Mode current;
+    //Mode current;
 
 };
 
