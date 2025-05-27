@@ -11,7 +11,7 @@
 class CException : public std::exception {
     std::string msg;
 public:
-    CException(const std::string& m);
+    explicit CException(const std::string& m);
 
     const char* what() const noexcept override;
 };

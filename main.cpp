@@ -6,7 +6,7 @@
 
 int main() {
 
-    
+
     try {
         CMenu::Instance().run();
     }

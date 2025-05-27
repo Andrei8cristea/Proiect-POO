@@ -10,7 +10,7 @@
 
 class CInvalidBudget final: public  CException {
 public:
-    CInvalidBudget(int budget);
+    explicit CInvalidBudget(int budget);
 };
 
 

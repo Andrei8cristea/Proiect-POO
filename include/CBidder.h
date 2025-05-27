@@ -44,7 +44,7 @@ public:
 
     void addAcquired(const std::shared_ptr<CCar>& car);
 
-    const std::list<std::shared_ptr<CCar>> getAcquired () ;
+    const std::list<std::shared_ptr<CCar>> getAcquired () const;
 
     void wonRound();
 

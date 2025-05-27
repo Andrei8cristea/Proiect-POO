@@ -128,7 +128,7 @@ void CMenu::case2() {
     }
 
     std::cout<<"Cars available for auctioning:\n";
-    for (auto& ptr : allCars) {
+    for (const auto& ptr : allCars) {
         std::cout<<*ptr;
         std::cout << "Type: "<<ptr ->getTypeName() << "\n"
                     <<"BasePrice: "<< ptr->basePrice() << "\n";
@@ -165,7 +165,7 @@ void CMenu::case3() {
     auto cars = carRepo.findAll([](auto& ){return true;});
 
     std::sort(cars.begin(), cars.end(),
-  [](auto& a, auto& b){ return *a < *b; }
+  [](const auto& a,const auto& b){ return *a < *b; }
     );
     // for every car I am opening an auction
     for (auto& carPtr : cars) {

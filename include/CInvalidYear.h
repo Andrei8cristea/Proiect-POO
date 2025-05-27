@@ -9,7 +9,7 @@
 
 class CInvalidYear final : public CException {
 public:
-    CInvalidYear(int year);
+    explicit CInvalidYear(int year);
 };
 
 
