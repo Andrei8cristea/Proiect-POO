@@ -67,11 +67,18 @@ double CBidder::decideBid(const CCar &car, double const currentPrice) const {
     double const stressFactor = dist(gen);
 
     //for debug:
-    std::cout << "  [" << name << " Strategy: "
-              << (strat.getMode() == CStrategy::Mode::Aggressive ? "Aggressive" :
-                  strat.getMode() == CStrategy::Mode::Normal     ? "Normal"     :
-                                                                   "Passive")
-              << "]\n";
+    std::cout << "  [" << name << " Strategy: ";
+    if (strat.getMode() == CStrategy::Mode::Aggressive) {
+        std::cout << "AggresSive";
+    }
+    else if (strat.getMode() == CStrategy::Mode::Normal) {
+        std::cout << "Normal";
+    }
+    else if (strat.getMode() == CStrategy::Mode::Passive) {
+        std::cout << "Passive";
+    }
+
+              std::cout<< "]\n";
 
     double const base = currentPrice + 500;
     double const offer = isFav ? strat.adjustFavourite(base) : strat.adjustOther(base);

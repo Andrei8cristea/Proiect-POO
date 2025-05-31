@@ -1,12 +1,31 @@
-# Nu primesc notă pentru că nu am pus titlu și descriere
+# PROIECT POO - LICITATII DE MASINI
 
-### Folosiți template-ul corespunzător grupei voastre!
+## Descrierea proiectului
 
-| Laborant  | Link template                                |
-|-----------|----------------------------------------------|
-| Dragoș B  | https://github.com/Ionnier/oop-template      |
-| Tiberiu M | https://github.com/MaximTiberiu/oop-template |
-| Marius MC | https://github.com/mcmarius/oop-template     |
+#### Descrierea claselor:
+
+CCar este clasa abstracta din care derivez fiecare clasa specifica de masini(Classic, Rally si Sport)
+
+Apoi am clasa CStrategy cu care implementez tiparul strategic al fiecarui jucator cu un enum(Agressive, Normal, Passive)
+
+In clasa CBidder instantiez practic participantii la licitatie si prin functia decide bid le atribui o strategie in functie de masina prefereata, numarul de runde anterior pierdut sau numarul de runde castigat(de exemplu daca acum se
+liciteaza o masina de tip favourite si bidderul a pierudut cel putin o runda acesta va aborda o strategie mai agresiva si va bid-ui mai mult). De asemenea am adaugat si un factor de randomness pe care l-am numit stressfactor si imi mai
+adauga o mica parte la bid(presupunand ca din cauza stresului bidder vor oferi sume care nu sunt rotunde si putin mai mari decat minimul necesar)
+
+In clasa template CRepository tin datele si am implementat ca functii adaugarea stergerea si functia findAll care ia un predicat de tip template(care este practic o functie) si imi intoarce toate valorile din colectia respectiva care respecta
+conditia din predicat
+
+In CMenu implementez efectiv functionalitatile vizibile in meniul interactiv
+
+#### Functionalitati:
+
+1. vinderea unei masini. Practic se supraincarca operatorul de citire al fiecarei clase derivate care foloseste operatorul din clasa de baza si ulterior adauga masina astfel creeata in CRepo ul necesar.
+2. afisarea tuturor masinilor disponibile pt licitatie. Pur si simplu afisez toate elementele din vector utilizand operatorul de citire supraincarcat
+3. inceperea licitiatiilor. Cea mai complexa functie din proiectul meu. Pentru fiecare masina se afiseaza datele si apoi se deschide o licitatie. Apoi bidderii pot paria in functie de bugetul lor si de strategie pe care o au in acel moment(deoarece aceasta se schimba de-a lungul licitatiilor). Apoi vine si randul userului care este tot un bidder si acesta are trei optiuni: sa parieze cu cel putin 500 mai mult decat bid ul curent, sa dea skip acestui bid, sau sa dea skip acestei masini lasand doar botii sa joace. La final castigatorului i se actualizeaza bugetul si masina i se adauga in portofoliu/
+4. aici se pot vedea informatii despre fiecare bidder in parte (buget, masini castigate, runde pierdute, castigate, etc)
+
+Exceptiile au fost tratate prin creearea unei clase genereale de exceptii derivata din std::exception (CException) din care am derivat ulterior alte clase de exceptii specifice.
+
 
 ## Instrucțiuni de compilare
 
