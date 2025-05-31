@@ -51,6 +51,9 @@ public:
     void lostRound();
 
     int getRoundsLost() const;
+
+    int getID () const;
+
 };
 
 

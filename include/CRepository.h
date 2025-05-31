@@ -34,11 +34,21 @@ public:
         return result;
     }
 
-    // void displayAll() {
-    //     for (const auto& e : data) {
-    //         std::cout << e << "\n";
-    //     }
-    // }
+    void displayAll() {
+
+        if (data.empty()) {
+            std::cout << "No available cars for auctioning at the moment.\n";
+        }
+        else {
+            std::cout<<"Cars available for auctioning:\n";
+            for (const auto& e : data) {
+                std::cout << *e;
+                std::cout << "Type: "<<e ->getTypeName() << "\n"
+                        <<"BasePrice: "<< e->basePrice() << "\n";
+
+            }
+        }
+    }
 };
 
 #endif // CREPOSITORY_H

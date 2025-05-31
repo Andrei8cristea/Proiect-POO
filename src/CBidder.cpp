@@ -124,6 +124,10 @@ void CBidder::lostRound() {
     roundsWithoutWin++;
 }
 
+int CBidder::getID() const {
+    return id;
+}
+
 
 int CBidder::getRoundsLost() const {
     return roundsWithoutWin;

@@ -9,7 +9,7 @@ CCar este clasa abstracta din care derivez fiecare clasa specifica de masini(Cla
 Apoi am clasa CStrategy cu care implementez tiparul strategic al fiecarui jucator cu un enum(Agressive, Normal, Passive)
 
 In clasa CBidder instantiez practic participantii la licitatie si prin functia decide bid le atribui o strategie in functie de masina prefereata, numarul de runde anterior pierdut sau numarul de runde castigat(de exemplu daca acum se
-liciteaza o masina de tip favourite si bidderul a pierudut cel putin o runda acesta va aborda o strategie mai agresiva si va bid-ui mai mult). De asemenea am adaugat si un factor de randomness pe care l-am numit stressfactor si imi mai
+liciteaza o masina de tip favourite si bidderul a pierdut cel putin o runda acesta va aborda o strategie mai agresiva si va bid-ui mai mult). De asemenea am adaugat si un factor de randomness pe care l-am numit stressfactor si imi mai
 adauga o mica parte la bid(presupunand ca din cauza stresului bidder vor oferi sume care nu sunt rotunde si putin mai mari decat minimul necesar)
 
 In clasa template CRepository tin datele si am implementat ca functii adaugarea stergerea si functia findAll care ia un predicat de tip template(care este practic o functie) si imi intoarce toate valorile din colectia respectiva care respecta

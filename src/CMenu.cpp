@@ -29,11 +29,19 @@ void CMenu::initData() {
     // initializing cars
     carRepo.add(std::make_shared<CClassicCar>
         ("Ford", "Model T", 1925, 1.8, "USA" ));
+    carRepo.add(std::make_shared<CClassicCar>
+        ("Fiat", "500", 1960, 1.4, "Italy"));
+    carRepo.add(std::make_shared<CSportsCar>
+        ("Alfa Romeo", "Giulia", 2019, 340,320));
+    carRepo.add(std::make_shared<CSportsCar>
+        ("Jaguar", "F-Type", 2016, 275, 250));
     carRepo.add(std::make_shared<CRallyCar>(
         "Subaru", "Impreza", 2020, 0.8, true));
 
 
     // initializing bidders
+
+
 
 
     bidders.add(CBidder(
@@ -42,6 +50,10 @@ void CMenu::initData() {
 
     bidders.add(CBidder(
         "Boris" , 80000.0, "Rally", CStrategy(1.3 , 1.0, CStrategy::Mode::Normal)
+    ));
+
+    bidders.add(CBidder(
+            "Charlie", 100000.0, "Sports", CStrategy(1.5, 1.2, CStrategy::Mode::Normal)
     ));
 
     // bidders.add(CBidder(
@@ -120,22 +132,12 @@ void CMenu::case1() {
 }
 
 void CMenu::case2() {
-    auto const allCars = carRepo.findAll([](const auto&) {return true;});
 
-    if (allCars.empty()) {
-        std::cout << "No cars available for auction.\n";
-        return;
-    }
 
-    std::cout<<"Cars available for auctioning:\n";
-    for (const auto& ptr : allCars) {
-        std::cout<<*ptr;
-        std::cout << "Type: "<<ptr ->getTypeName() << "\n"
-                    <<"BasePrice: "<< ptr->basePrice() << "\n";
-
+    carRepo.displayAll();
         std::cout << "\n\n" ;
     }
-}
+//}
 
 
 
@@ -286,18 +288,19 @@ void CMenu::case4() {
 
     auto matches = bidders.findAll([&](const CBidder& b){return b.getName() == reqName;});
 
-    if (matches.size() == 0) {
-        std::cout << "0 results\n\n";
+    if (matches.empty()) {
+        std::cout << "No results!\n\n";
         return;
     }
     if (matches.size() >= 2) {
-        std::cout << "throw fatal error" ;
+        std::cout << "Two bidders can't have the same name!\n\n" ;
         return;
     }
 
     const CBidder& b = matches.front();
 
     std::cout << "\nProfile for : " << b.getName() << std::endl;
+    std::cout << "ID: "<< b.getID() << std::endl;
     std::cout << "Remaining budget: " << b.getBudget() <<std::endl;
     std::cout << "Last streak of lost rounds: " << b.getRoundsLost() << std::endl;
     std::cout << "Won rounds : " << b.getAcquired().size() << std::endl;
